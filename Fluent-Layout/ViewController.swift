@@ -12,14 +12,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let yellowView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        
+        yellowView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(yellowView)
+       
+        yellowView.constrain()
+        .center(in: self.view)
+        .setSize(width: 100, height: 100)
+        .activate()
+        
+        yellowView.backgroundColor = UIColor.yellow
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 
